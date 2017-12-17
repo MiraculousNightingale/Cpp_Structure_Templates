@@ -44,4 +44,16 @@ public:
 		}
 		cout << endl;
 	}
+	List operator[](int id) {
+		return Search_ID(id);
+	}
+private:
+	List Search_ID(int id) {
+		List* Current = Head;
+		while (Current != NULL) {
+			if (Current->index == id) return (*Current);
+			Current = Current->Next;
+		}
+		cout <<endl<<id<<" Not found\n";
+	}
 };

@@ -13,7 +13,11 @@ void main()
 	test.Add(2);
 	test.Add(3);
 	test.Output();
-    
+	cout << "\nOutput by id:\n";
+	for (int i = 0; i < 3; i++) {
+		cout << test[i].content << " ";
+	}
+	cout << endl;
 	system("pause");
 }
 
