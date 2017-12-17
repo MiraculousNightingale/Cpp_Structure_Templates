@@ -13,8 +13,17 @@ void main()
 	test.Add(2);
 	test.Add(3);
 	test.Output();
+	test.Insert(1, 10);
+	test.Output();
 	cout << "\nOutput by id:\n";
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < test.Count(); i++) {
+		cout << test[i].content << " ";
+	}
+	cout << "\nMake Changes by id:\n";
+	for (int i = 0; i < test.Count(); i++) {
+		test[i].content = i + 10;
+	}
+	for (int i = 0; i < test.Count(); i++) {
 		cout << test[i].content << " ";
 	}
 	cout << endl;

@@ -23,6 +23,13 @@ public:
 		index = After->index + 1;
 		content = entry;
 	}
+	List(List* After, List* Before, T entry) {
+		Next = Before;
+		Previous = After;
+		Head = After->Head;
+		index = After->index + 1;
+		content = entry;
+	}
 	void Add(T entry) {
 		if (Head == NULL) {
 			Head = new List(entry);
@@ -35,6 +42,10 @@ public:
 			Current->Next = new List(Current, entry);
 		}
 	}
+	void Insert(int id, T entry) {
+		List* Current = Search_ID(id);
+		Current->Next = new List(Current, Search_ID(id + 1), entry);
+	}
 	void Output() {
 		List* Current = Head;
 		cout << "List Output:\n";
@@ -44,16 +55,30 @@ public:
 		}
 		cout << endl;
 	}
-	List operator[](int id) {
-		return Search_ID(id);
-	}
-private:
-	List Search_ID(int id) {
+	List& operator[](int id) {
 		List* Current = Head;
 		while (Current != NULL) {
-			if (Current->index == id) return (*Current);
+			if (Current->index == id) return *Current;
 			Current = Current->Next;
 		}
-		cout <<endl<<id<<" Not found\n";
+		//cout << endl << id << " Not found\n";
+	}
+	int Count() {
+		List* Current = Head;
+		int count = 0;
+		while (Current != NULL) {
+			count++;
+			Current = Current->Next;
+		}
+		return count;
+	}
+private:
+	List* Search_ID(int id) {
+		List* Current = Head;
+		while (Current != NULL) {
+			if (Current->index == id) return Current;
+			Current = Current->Next;
+		}
+		//cout << endl << id << " Not found\n";
 	}
 };
