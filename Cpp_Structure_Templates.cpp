@@ -2,10 +2,18 @@
 //
 
 #include "stdafx.h"
+#include "List.h"
 
+using namespace std;
 
-int main()
+void main()
 {
-    return 0;
+	List<int> test;
+	test.Add(1);
+	test.Add(2);
+	test.Add(3);
+	test.Output();
+    
+	system("pause");
 }
 
