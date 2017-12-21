@@ -27,6 +27,7 @@ public:
 		content = entry;
 	}
 	Queue(Queue* After, T entry) {
+		Next = NULL;
 		Previous = After;
 		Head = After->Head;
 		index = After->index + 1;

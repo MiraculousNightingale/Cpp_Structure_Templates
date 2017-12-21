@@ -24,6 +24,7 @@ public:
 		content = entry;
 	}
 	List(List* After, T entry) {
+		Next = NULL;
 		Previous = After;
 		Head = After->Head;
 		index = After->index + 1;
