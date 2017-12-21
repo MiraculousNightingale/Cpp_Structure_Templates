@@ -5,13 +5,17 @@ template<class T>
 class List {
 
 private:
-	List *Next = NULL;
-	List *Previous = NULL;
-	List *Head = NULL;
+	List *Next;
+	List *Previous;
+	List *Head;
 	int index;
 public:
 	T content;
-	List() {}
+	List() {
+		Next = NULL;
+		Previous = NULL;
+		Head = NULL;
+	}
 	List(T entry) {
 		Head = this;
 		index = 0;

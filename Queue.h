@@ -8,13 +8,17 @@ template<class T>
 class Queue {
 
 private:
-	Queue *Next = NULL;
-	Queue *Previous = NULL;
-	Queue *Head = NULL;
+	Queue *Next;
+	Queue *Previous;
+	Queue *Head;
 	int index;
 public:
 	T content;
-	Queue() {}
+	Queue() {
+		Next = NULL;
+		Previous = NULL;
+		Head = NULL;
+	}
 	Queue(T entry) {
 		Head = this;
 		index = 0;

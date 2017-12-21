@@ -5,13 +5,17 @@ template<class T>
 class Stack {
 
 private:
-	Stack *Next = NULL;
-	Stack *Head = NULL;
+	Stack *Next;
+	Stack *Head;
 	int index;
 public:
 	T content;
-	Stack() {}
+	Stack() {
+		Next = NULL;
+		Head = NULL;
+	}
 	Stack(T entry) {
+		Next = NULL;
 		Head = this;
 		index = 0;
 		content = entry;
