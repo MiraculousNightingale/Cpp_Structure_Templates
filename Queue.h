@@ -20,6 +20,8 @@ public:
 		Head = NULL;
 	}
 	Queue(T entry) {
+		Next = NULL;
+		Previous = NULL;
 		Head = this;
 		index = 0;
 		content = entry;

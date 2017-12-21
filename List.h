@@ -17,6 +17,8 @@ public:
 		Head = NULL;
 	}
 	List(T entry) {
+		Next = NULL;
+		Previous = NULL;
 		Head = this;
 		index = 0;
 		content = entry;
